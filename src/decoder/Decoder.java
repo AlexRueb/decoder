@@ -19,19 +19,19 @@ public class Decoder {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         String f = "src/input.txt";
         // TODO code application logic here
         String message = new String();
         try (BufferedReader b = new BufferedReader(new FileReader(f))) {
-            String line = new String();
+            String line = line = b.readLine();
             String mainCode = new String();
-            line = b.readLine();
             while (line != null) {
                 mainCode = mainCode + line;
                 line = b.readLine();
-
+                
             }
             message = mainCode;
             System.out.println(mainCode.length());
